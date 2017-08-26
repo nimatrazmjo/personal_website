@@ -1,0 +1,17 @@
+{
+  "name": "personal_website",
+  "version": "1.0.0",
+  "description": "A website using symfony 3",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6"
+  }
+}

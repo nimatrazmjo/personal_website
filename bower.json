@@ -1,0 +1,17 @@
+{
+  "name": "personal_website",
+  "authors": [
+    "Nimatullah Razmjo <nimatullah.razmjo@gmail.com>"
+  ],
+  "description": "A website using symfony 3",
+  "main": "web/app.php",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
