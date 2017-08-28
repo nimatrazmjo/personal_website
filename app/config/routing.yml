@@ -1,3 +1,12 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+resume:
+    resource: "@ResumeBundle/Resources/config/routing.yml"
+    prefix:   /resume
+
+contact_us:
+    resource: "@ContactUsBundle/Resources/config/routing.yml"
+    prefix:   /contact_us
+
