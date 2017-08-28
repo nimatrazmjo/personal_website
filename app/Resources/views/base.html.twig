@@ -9,7 +9,38 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="wrapper">
+            <div class="container main_wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="#">Symfony personal website</a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Resume</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-md-12">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/tether/dist/js/tether.min.js') }}"></script>
         <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
