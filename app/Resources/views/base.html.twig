@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('assets/bootstrap/dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/tether/dist/css/tether.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -44,6 +45,7 @@
         <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/tether/dist/js/tether.min.js') }}"></script>
         <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('javascript/scripts.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

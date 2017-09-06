@@ -5,6 +5,7 @@ namespace BlogBundle\Controller;
 use BlogBundle\Entity\Blog;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Blog controller.
@@ -38,6 +39,8 @@ class BlogController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $form['image']->getData();
+            $file->move('uploads', $file->getClientOriginalName());
             $em = $this->getDoctrine()->getManager();
             $em->persist($blog);
             $em->flush();
