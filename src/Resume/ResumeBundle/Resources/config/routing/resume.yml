@@ -1,0 +1,24 @@
+resume_index:
+    path:     /
+    defaults: { _controller: "ResumeBundle:Resume:index" }
+    methods:  GET
+
+resume_show:
+    path:     /{id}/show
+    defaults: { _controller: "ResumeBundle:Resume:show" }
+    methods:  GET
+
+resume_new:
+    path:     /new
+    defaults: { _controller: "ResumeBundle:Resume:new" }
+    methods:  [GET, POST]
+
+resume_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ResumeBundle:Resume:edit" }
+    methods:  [GET, POST]
+
+resume_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ResumeBundle:Resume:delete" }
+    methods:  DELETE

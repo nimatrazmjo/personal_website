@@ -1,3 +1,4 @@
-resume_homepage:
-    path:     /
-    defaults: { _controller: ResumeBundle:Default:index }
+resume_resume:
+    resource: "@ResumeBundle/Resources/config/routing/resume.yml"
+    prefix:   /resume
+
