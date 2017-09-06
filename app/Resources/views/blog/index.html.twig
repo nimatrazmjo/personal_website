@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Blogs list</h1>
 
-    <table>
+    <a href="{{ path('blog_new') }}" class="float-right btn btn-info">Create a new blog</a>
+    <h1>Blogs list</h1>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -11,37 +12,25 @@
                 <th>Content</th>
                 <th>Createdat</th>
                 <th>Updatedat</th>
-                <th>Image</th>
+
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for blog in blogs %}
             <tr>
-                <td><a href="{{ path('blog_show', { 'id': blog.id }) }}">{{ blog.id }}</a></td>
-                <td>{{ blog.title }}</td>
-                <td>{{ blog.content }}</td>
-                <td>{% if blog.createdAt %}{{ blog.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if blog.updatedAt %}{{ blog.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ blog.image }}</td>
+                <td scope="row"><a href="{{ path('blog_show', { 'id': blog.id }) }}">{{ blog.id }}</a></td>
+                <td>{{ blog.title | slice(0, 5) }}</td>
+                <td>{{ blog.content | slice(0,25) }}...</td>
+                <td>{% if blog.createdAt %}{{ blog.createdAt|date('F d,Y') }}{% endif %}</td>
+                <td>{% if blog.updatedAt %}{{ blog.updatedAt|date('F d,Y') }}{% endif %}</td>
+
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('blog_show', { 'id': blog.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('blog_edit', { 'id': blog.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('blog_show', { 'id': blog.id }) }}" class="btn-info btn">show</a>
+                    <a href="{{ path('blog_edit', { 'id': blog.id }) }}" class="btn btn-info">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('blog_new') }}">Create a new blog</a>
-        </li>
-    </ul>
 {% endblock %}

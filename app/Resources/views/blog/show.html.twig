@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <a class="btn btn-info float-right" href="{{ path('blog_index') }}">Back to the list</a>
+    <a class="btn btn-info float-right" href="{{ path('blog_edit', { 'id': blog.id }) }}">Edit</a>
     <h1>Blog</h1>
 
     <table>
@@ -31,18 +33,8 @@
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('blog_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('blog_edit', { 'id': blog.id }) }}">Edit</a>
-        </li>
-        <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-info" type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
 {% endblock %}
